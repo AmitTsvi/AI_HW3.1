@@ -15,8 +15,8 @@ def predict(sample, data, k):
     return 1 if vote >= k/2 else 0
 
 
-def knn(norm_train_data, norm_test_data, k):
-    return [predict(x, norm_train_data, k) for x in norm_test_data]
+def knn(train_data, test_data, k):
+    return [predict(x, train_data, k) for x in test_data]
 
 
 if __name__ == '__main__':

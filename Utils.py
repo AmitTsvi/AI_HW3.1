@@ -1,8 +1,8 @@
 import pandas as pd
 
+
 def read_data(filename: str):
     data = pd.read_csv(filename, dtype=float)
-    print(data.head())
     data = data.to_numpy()
     return data
 
