@@ -22,13 +22,13 @@ X_test = test_data[test_data.columns.difference(['Outcome'])]
 Y_test = test_data[['Outcome']]
 
 # DT9
-DT9 = tree.DecisionTreeClassifier(criterion="entropy", min_samples_split=9, class_weight={0:4,1:1})
+DT9 = tree.DecisionTreeClassifier(criterion="entropy", min_samples_split=9, class_weight={0:1,1:4})
 DT9 = DT9.fit(X_train, Y_train)
 DT9_test = DT9.predict(X_test)
 print("DT9:")
 print(metrics.confusion_matrix(Y_test, DT9_test))
 accuracy_score_DT9 = accuracy_score(Y_test, DT9_test)
-print(accuracy_score_DT9)
+#print(accuracy_score_DT9)
 
 
 
