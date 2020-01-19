@@ -21,11 +21,11 @@ if __name__ == '__main__':
             feature_sel = np.append(feature_sel, [n_features])
             prediction = knn(norm_train_data[:, feature_sel], norm_test_data[:, feature_sel], k)
             conf_mat = confusion_matrix(norm_test_data[:, -1], prediction)
-            error_w = 4*conf_mat[1, 0]+conf_mat[0, 1]
+            error_w = conf_mat[1, 0]+conf_mat[0, 1]
             if error_w < min_val:
                 min_sel = feature_sel[:-1]
                 min_val = error_w
-    print(min_sel)
+    print(list(min_sel))
 
 
 

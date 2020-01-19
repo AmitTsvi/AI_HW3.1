@@ -26,7 +26,7 @@ if __name__ == '__main__':
             new_sel.insert(0, i)
             prediction = knn(norm_train_data[:, new_sel], norm_test_data[:, new_sel], k)
             conf_mat = confusion_matrix(norm_test_data[:, -1], prediction)
-            error_w = 4 * conf_mat[1, 0] + conf_mat[0, 1]
+            error_w = conf_mat[1, 0] + conf_mat[0, 1]
             if error_w < min_error:
                 min_sel = new_sel
                 min_error = error_w
