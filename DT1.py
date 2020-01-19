@@ -69,11 +69,13 @@ DT1_test_1 = DT1_test.copy()
 DT1_test_2 = DT1_test.copy()
 
 
-def prob_calc (p: float, DT1_test_changed, Y_test):
+def prob_calc (p_prob: float, DT1_test_changed, Y_test):
     for y in range(len(DT1_test_changed)):
         if DT1_test_changed[y] == 0:
-            coin = random.random()
-            if coin <= p:
+            #coin = random.random()
+            #if coin <= p:
+            coin = np.random.choice(np.arange(0,2), p=[p_prob, 1-p_prob])
+            if coin == 0:
                 DT1_test_changed[y] = 1
     print("DT1 , " + str(p) + ":")
     print(metrics.confusion_matrix(Y_test, DT1_test_changed))
