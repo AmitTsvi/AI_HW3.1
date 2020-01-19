@@ -56,9 +56,9 @@ accuracy_score_DT27 = accuracy_score(Y_test, DT27_test)
 print(accuracy_score_DT27)
 
 # DT27 image
-plt.figure(figsize=(40,20))  # customize according to the size of your tree
-_ = tree.plot_tree(DT9, feature_names = X_train.columns)
-plt.show()
+# plt.figure(figsize=(40,20))  # customize according to the size of your tree
+# _ = tree.plot_tree(DT9, feature_names = X_train.columns)
+# plt.show()
 
 
 # ----------- PART B -----------
