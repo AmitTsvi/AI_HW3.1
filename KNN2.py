@@ -1,6 +1,6 @@
 import numpy as np
 from sklearn.metrics import confusion_matrix
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 from Utils import read_data
 from Utils import normalize_data
 
@@ -32,10 +32,10 @@ if __name__ == '__main__':
     norm_test_data = normalize_data(test_data, train_data)
     prediction = knn(norm_train_data, norm_test_data, k)
     conf_mat = confusion_matrix(norm_test_data[:, -1], prediction)
-    print("Confusion matrix = ")
+    # print("Confusion matrix = ")
     print(conf_mat)
-    print("Error_w = " + str(4*conf_mat[1, 0]+conf_mat[0, 1]))
+    # print("Error_w = " + str(4*conf_mat[1, 0]+conf_mat[0, 1]))
     k_values = [1, 3, 9, 27]
     error_values = [error_w(norm_test_data[:, -1], knn(norm_train_data, norm_test_data, x)) for x in k_values]
-    plt.plot(k_values, error_values)
-    plt.show()
+    # plt.plot(k_values, error_values)
+    # plt.show()

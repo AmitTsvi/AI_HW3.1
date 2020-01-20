@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn import tree, metrics
 from sklearn.metrics import accuracy_score
-import random
+# import random
 
 
 # ----------- PART A -----------
